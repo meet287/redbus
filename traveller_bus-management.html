@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Management Traveller Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+                body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f5f7;
+            margin: 0;
+        }
+
+        .sidebar {
+            background-color: #343a40;
+            color: white;
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            padding-top: 20px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            font-size: 18px;
+            border-bottom: 1px solid #4b4f56;
+        }
+
+        .sidebar a:hover {
+            background-color: #575f64;
+            border-radius: 5px;
+        }
+
+        .sidebar .active {
+            background-color: #2575fc;
+        }
+
+        .sidebar i {
+            margin-right: 10px;
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 30px;
+        }
+
+
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Custom Button Styles */
+        .btn-primary, .btn-danger, .btn-success {
+            margin-right: 5px;
+        }
+
+        /* Modal Styles */
+        .modal-header, .modal-footer {
+            border: none;
+        }
+
+        /* Card Styles */
+        .bus-card {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .bus-card .bus-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .bus-card .bus-details {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .bus-card .bus-actions {
+            margin-top: 15px;
+        }
+
+        .bus-card .bus-actions button {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 991px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .content {
+                margin-left: 200px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                padding: 10px 0;
+            }
+
+            .content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .sidebar a {
+                font-size: 16px;
+            }
+
+            .card-body h5 {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .sidebar a {
+                font-size: 17px;
+            }
+
+            .card-body h5 {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3 class="text-center text-white">Traveller Panel</h3><br>
+        <a href="traveller-dashboard.html"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+        <a href="traveller_bus-management.html"><i class="fas fa-bus"></i>Manages Bus</a>
+        <a href="traveller_booking-management.html"><i class="fas fa-calendar-check"></i>Manages Booking</a>
+        <a href="login.html" class="text-danger"><i class="fas fa-sign-out-alt"></i>Logout</a>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Button to Trigger Modal -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Bus Management</h2>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBusModal">
+        Add New Bus
+    </button>
+</div>
+
+                    <!-- Manage Buses Cards -->
+                    <div id="manageBuses" class="row mt-4">
+                        <div class="col-md-4">
+                            <div class="card bus-card">
+                                <div class="bus-title">Bus 1</div><hr>
+                                <div class="bus-details">
+                                    <p>Source: City A</p>
+                                    <p>Destination: City B</p>
+                                    <p>Arrival Time: 10:00 AM</p>
+                                    <p>Departure Time: 12:00 PM</p>
+                                    <p>Fare: $50</p>
+                                    <button class="btn btn-primary">Edit</button>
+                                    <button class="btn btn-danger">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card bus-card">
+                                <div class="bus-title">Bus 2</div><hr>
+                                <div class="bus-details">
+                                    <p>Source: City C</p>
+                                    <p>Destination: City D</p>
+                                    <p>Arrival Time: 02:00 PM</p>
+                                    <p>Departure Time: 04:00 PM</p>
+                                    <p>Fare: $60</p>
+                                    <button class="btn btn-primary">Edit</button>
+                                    <button class="btn btn-danger">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- More Bus Cards can be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Adding Bus -->
+    <div class="modal fade" id="addBusModal" tabindex="-1" aria-labelledby="addBusModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addBusModalLabel">Add New Bus</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="add_bus.php" method="POST">
+                        <div class="mb-3">
+                            <label for="busName" class="form-label">Bus Name</label>
+                            <input type="text" class="form-control" id="busName" name="busName"  >
+                        </div>
+                        <div class="mb-3">
+                            <label for="source" class="form-label">Source</label>
+                            <input type="text" class="form-control" id="source" name="source"  >
+                        </div>
+                        <div class="mb-3">
+                            <label for="destination" class="form-label">Destination</label>
+                            <input type="text" class="form-control" id="destination" name="destination"  >
+                        </div>
+                        <div class="mb-3">
+                            <label for="arrivalTime" class="form-label">Arrival Time</label>
+                            <input type="time" class="form-control" id="arrivalTime" name="arrivalTime"  >
+                        </div>
+                        <div class="mb-3">
+                            <label for="fare" class="form-label">Fare</label>
+                            <input type="number" class="form-control" id="fare" name="fare"  >
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Add Bus</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

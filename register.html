@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: aliceblue;
+
+        }
+
+        .register-card {
+            background-color: white;
+    padding: 40px;
+    border-radius: 20px; /* Slightly more rounded corners */
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+
+
+    
+
+        .register-card h3 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 8px;
+            box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
+        }
+
+        .form-control:focus {
+            border-color: #2575fc;
+            box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+        }
+
+        .btn-custom {
+            background-color: #2575fc;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            padding: 12px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #1e63d4;
+            color: white;
+
+        }
+
+        .btn-custom:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+        }
+
+        .text-center p a {
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .text-center p a:hover {
+            text-decoration: underline;
+        }
+        h3{
+            color: #2575fc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Registration Form -->
+    <div class="register-card">
+        <h3 style="            color: #2575fc;
+">Create Your Account</h3>
+        <form action="register.php" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name"  >
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email"  >
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password"  >
+            </div>
+            <div class="mb-3">
+                <label for="contact" class="form-label">Contact Number</label>
+                <input type="text" class="form-control" id="contact" name="contact"  >
+            </div>
+            <div class="mb-3">
+                <label for="role" class="form-label">Role</label>
+                <select class="form-control" id="role" name="role"  >
+                    <option value="passenger">Passenger</option>
+                    <option value="traveller">Traveller</option>
+                </select>
+            </div>
+            <a href="login.html" type="submit" class="btn btn-custom">Register</a>
+            <div class="text-center mt-3">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
