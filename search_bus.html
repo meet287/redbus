@@ -40,26 +40,28 @@
     .form-control, .btn {
       border-radius: 10px;
     }
-    .containers {
-      display: flex;
-      justify-content: center;
-      /* align-items: center; */
-      min-height: 100vh;
-    }
-    .form-container {
-      width: 100%;
-      max-width: 1200px;
-    }
+   
+    
     .btn-success {
       background-color:       #1e63d4;
       color: white;
       border-radius: 10px;
       width: 100%;
+      border: none;
+      font-size: 1.2rem;
     }
     .btn-success:hover{
       background-color:       #1e63d4;
       color: white;
     }
+   
+
+        .form-control {
+            border-radius: 10px;
+            box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 5px;
+       }
+
   </style>
 </head>
 <body>
@@ -74,7 +76,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="search_bus.html">Home</a>
           </li>
           
           <li class="nav-item">
@@ -95,12 +97,12 @@
   </nav>
 
   <!-- Main Content -->
-  <div class="containers">
+  <div class="container mb-3">
+
     <div class="form-container">
       <h3 class="section-title text-center">Search & Book Tickets</h3>
 
-      <div class="card">
-        <div class="card-body">
+      <div class="card p-3">
           <form action="#" method="post">
             <div class="row">
               <div class="col-md-3 col-12 mb-3">
