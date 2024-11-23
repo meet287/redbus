@@ -80,33 +80,72 @@
             font-size: 1.5rem;
             color: #1e63d4;
         }
+        @media (max-width: 767px) {
+            .card-header {
+            text-align: center;
+            font-size: 1rem;
+            color: #1e63d4;
+        } 
+        .confirmation-message {
+            font-size: 0.8rem;
+            color: #333;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .card {
+            padding: 5px;
+            border-radius: 10px;
+        }
+        h3{
+            font-size: 1.1rem;
+        }
+        .btn-custom {
+          margin-bottom: 20px;
+font-size: 1rem;
+        }
+
+
+        .green-tick {
+            font-size: 55px;
+            color: #1e63d4;
+            margin-bottom: 10px;
+        }
+        }
     </style>
 </head>
 
 <body>
     <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">RedBus</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Rental Buses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">RedBus</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="search_bus.html">Home</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#">Rental Buses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin_dashboard.html">Admin panel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="traveller-dashboard.html">Traveller Panel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
     <!-- Booking Confirmation -->
     <div class="container mt-4">
@@ -145,12 +184,10 @@
                         <td>₹500</td>
                     </tr>
                 </table>
+                <a href="search_bus.html" class="btn btn-custom w-100" onclick="window.location.href='index.html'">Back to Home</a>
+
             </div>
 
-            <!-- Button Container -->
-            <div class="button-container">
-                <a href="search_bus.html" class="btn btn-custom w-100" onclick="window.location.href='index.html'">Back to Home</a>
-            </div>
         </div>
     </div>
 
